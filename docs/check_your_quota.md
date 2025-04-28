@@ -4,7 +4,7 @@ The table below shows the utilization for each environment created using the Bic
 
 | Deployment Name          | Model Name             | Model Version | SKU Name | Capacity |
 |--------------------------|------------------------|---------------|----------|----------|
-| gpt-35-turbo             | gpt-35-turbo           | 0613          | Standard | 20       |
+| gpt-4.1-turbo             | gpt-4.1-turbo           | 2025-04-14          | Standard | 20       |
 | gpt-4                    | gpt-4o                 | 2024-05-13    | Standard | 20       |
 | text-embedding-ada-002   | text-embedding-ada-002 | 2             | Standard | 20       |
 
@@ -21,7 +21,7 @@ $results = az cognitiveservices usage list --subscription $subscriptionId --loca
 $results | ConvertFrom-Json | Where-Object { 
     $_.name.value -match 'OpenAI.Standard.gpt-4o' -or 
     $_.name.value -match 'OpenAI.Standard.text-embedding-ada-002' -or 
-    $_.name.value -match 'Standard.gpt-35-turbo' 
+    $_.name.value -match 'Standard.gpt-4.1-turbo' 
 } | Select-Object *
 ```
 
@@ -33,7 +33,7 @@ region="replace by the desired region"
 results=$(az cognitiveservices usage list --subscription $subscriptionId --location $region) 
 echo $results | jq -r '.[] | select(.name.value | test("Standard.gpt-4"))'
 echo $results | jq -r '.[] | select(.name.value | test("OpenAI.Standard.text-embedding-ada-002"))'
-echo $results | jq -r '.[] | select(.name.value | test("Standard.gpt-35-turbo"))' 
+echo $results | jq -r '.[] | select(.name.value | test("Standard.gpt-4.1-turbo"))' 
 ```
 
 Example of verification in EastUS with Powershell:

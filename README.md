@@ -33,7 +33,7 @@ The following deployments will be created in the Azure OpenAI Service:
 
 | Deployment Name          | Model Name             | Model Version | SKU Name | Capacity |
 |--------------------------|------------------------|---------------|----------|----------|
-| gpt-35-turbo             | gpt-35-turbo           | 0613          | Standard | 20       |
+| gpt-4.1-turbo             | gpt-4.1-turbo           | 2025-04-14          | Standard | 20       |
 | gpt-4                    | gpt-4o                 | 2024-05-13    | Standard | 20       |
 | text-embedding-ada-002   | text-embedding-ada-002 | 2             | Standard | 20       |
 
